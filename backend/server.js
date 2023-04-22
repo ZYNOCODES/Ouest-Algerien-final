@@ -6,19 +6,24 @@ const cors = require('cors');
 const usersroutes = require('./routes/users');
 var path = require('path');
 const bodyParser = require("body-parser");
-const router = express.Router();
  
-
-
 //express app
 const app = express();
 
 //midleware
+const tempelatePath = path.join(__dirname, '/views')
+const publicPath = path.join(__dirname, '/views/css')
+console.log(publicPath);
 
+app.set('view engine','html')
+app.set('views',tempelatePath)
+
+app.use(bodyParser.json())
+app.use(express.static(publicPath))
+app.use(bodyParser.urlencoded({
+    extended:true
+}))
 app.use(cors());
-app.use(express.urlencoded());
-app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: true })); 
 app.use((req, res, next) => {
     console.log(req.path, req.method);
     next();
@@ -26,6 +31,26 @@ app.use((req, res, next) => {
 
 //routes
 app.use('/user', usersroutes); 
+
+app.get("/", (req, res) => {
+    res.sendFile(tempelatePath + "/Home/index.html");
+});
+
+app.get("/Documents", (req, res) => {
+    res.sendFile(tempelatePath + "/Documents/index.html");
+});
+
+app.get("/Contact", (req, res) => {
+    res.sendFile(tempelatePath + "/Contact/index.html");
+});
+
+app.get("/Login", (req, res) => {
+    res.sendFile(tempelatePath + "/Login/index.html");
+});
+
+app.get("/user", (req, res) => {
+    res.sendFile(tempelatePath + "/Admin/index.html");
+});
 
 //connect to db
 mongoose.connect(process.env.MONGO_URL)
