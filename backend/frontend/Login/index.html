@@ -27,14 +27,15 @@
       </nav>
       <div class="login-conrtainer">
         <div class="formulaire-container">
-          <form action="">
+        
+          <form action="http://localhost:8080/user/login" method="POST">
             <h2>welcome</h2>
             <span
               >We do noramlly get back within 48hrs. <br>Please leave a message.</span
             >
             <div class="form-input">
-              <input type="text" placeholder="Full Name" />
-              <input type="text" placeholder="Country / Region" />
+              <input type="text" name="email" placeholder="Enter your Email" />
+              <input type="text" name="password" placeholder=" Enter your Password" />
             </div>
             <div class="login-button-class">
               <input id="login-button" type="submit" value="Log In" />
