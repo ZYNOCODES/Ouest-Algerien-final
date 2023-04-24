@@ -54,7 +54,7 @@ const polygon = L.polygon([
     color:'blue',
     fillColor:'blue',
     fillOpacity:0.2
-}).addTo(map).bindPopup(' I am Ain temouchent')
+}).addTo(map).bindPopup(' I am ain temouchent')
 
 
 
