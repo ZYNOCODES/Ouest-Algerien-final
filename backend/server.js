@@ -4,9 +4,16 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const usersroutes = require('./routes/users');
+const indexroutes = require('./routes/index');
 var path = require('path');
 const bodyParser = require("body-parser");
- 
+const passport = require('passport');
+const flash = require('connect-flash');
+const session = require('express-session');
+
+// Passport Config
+require('./middleware/passport')(passport);
+
 //express app
 const app = express();
 
@@ -15,7 +22,7 @@ const tempelatePath = path.join(__dirname, '/views')
 const publicPath = path.join(__dirname, '/views/css')
 console.log(publicPath);
 
-app.set('view engine','html')
+app.set('view engine','ejs')
 app.set('views',tempelatePath)
 
 app.use(bodyParser.json())
@@ -29,28 +36,36 @@ app.use((req, res, next) => {
     next();
 });
 
+// Express session
+app.use(
+    session({
+      secret: 'secret',
+      resave: true,
+      saveUninitialized: true
+    })
+  );
+  
+// Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Connect flash
+app.use(flash());
+
+// Global variables
+app.use(function(req, res, next) {
+res.locals.success_msg = req.flash('success_msg');
+res.locals.error_msg = req.flash('error_msg');
+res.locals.error = req.flash('error');
+next();
+});
+
 //routes
+app.use('/', indexroutes); 
 app.use('/user', usersroutes); 
 
-app.get("/", (req, res) => {
-    res.sendFile(tempelatePath + "/Home/index.html");
-});
 
-app.get("/Documents", (req, res) => {
-    res.sendFile(tempelatePath + "/Documents/index.html");
-});
 
-app.get("/Contact", (req, res) => {
-    res.sendFile(tempelatePath + "/Contact/index.html");
-});
-
-app.get("/Login", (req, res) => {
-    res.sendFile(tempelatePath + "/Login/index.html");
-});
-
-app.get("/user", (req, res) => {
-    res.sendFile(tempelatePath + "/Admin/index.html");
-});
 
 //connect to db
 mongoose.connect(process.env.MONGO_URL)

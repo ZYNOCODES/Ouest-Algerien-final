@@ -1,5 +1,4 @@
 const express = require('express');
-const requireAuth = require('../middleware/requireAuth');
 const {
     Login,
     Signup,
@@ -9,19 +8,33 @@ const {
     DeleteArticle,
     UpdateArticle
 } = require('../controllers/UserController');
+const { forwardAuthenticated } = require('../middleware/auth');
+
 const router = express.Router();
 
-//login
+// Login Page
+router.get('/login', forwardAuthenticated, (req, res) => 
+    res.render('login')
+);
+
+// Login
 router.post('/login', Login);
 
+// Logout
+router.get('/logout', (req, res) => {
+    req.logout(function(err) {
+        if (err) { return next(err); }
+        req.flash('success_msg', 'You are logged out');
+        res.redirect('/user/login');
+    });
+});
+
+  
 //signup
 router.post('/signup', Signup);
 
-//require authentication
-router.use(requireAuth);
-
 //get all users
-router.get('/', GetAllArticles);
+//router.get('/', GetAllArticles);
 
 //get a specific user
 router.get('/:id', GetArticle);
