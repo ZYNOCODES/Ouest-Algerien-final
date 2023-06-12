@@ -1,38 +1,89 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
-const validator = require('validator');
-const ArticleSchema = new mongoose.Schema({
-    title: {
+
+const placesSchema = new mongoose.Schema({
+    wkt_geom: {
         type: String,
-        required: true,
+        required: false,
     },
-    description: {
+    id: {
+        type: Number,
+        require: false,
+    },
+    Nouveau_No: {
         type: String,
-        required: true,
+        require: false,
+    },
+    Type: {
+        type: String,
+        require: false,
+    },
+    wilaya: {
+        type: String,
+        require: false,
+    },
+    Ancien_Nom: {
+        type: String,
+        require: false,
+    },
+    Dispositio: {
+        type: String,
+        require: false,
+    },
+    Code_Wilay: {
+        type: Number,
+        require: false,
+    },
+    Code_Commu: {
+        type: Number,
+        require: false,
+    },
+    Commune: {
+        type: String,
+        require: false,
+    },
+    PositionKm: {
+        type: String,
+        require: false,
+    },
+    M_Oeuvre: {
+        type: String,
+        require: false,
+    },
+    LigneFerro: {
+        type: String,
+        require: false,
+    },
+    StyleArchi: {
+        type: String,
+        require: false,
+    },
+    Date_Const: {
+        type: String,
+        require: false,
+    },
+    Date_Recon: {
+        type: String,
+        require: false,
+    },
+    Cie_Ferrov: {
+        type: String,
+        require: false,
+    },
+    Etat_Actu: {
+        type: String,
+        require: false,
+    },
+    LattitudeY: {
+        type: String,
+        require: false,
+    },
+    LongitudeX: {
+        type: String,
+        require: false,
     }
 },{timestamps: true});
 
-// static method to create a new article
-ArticleSchema.statics.Create = async function(title, description){
-    
-    // validation
-    if(!title || !description){
-        throw Error('All fields mast be filled');
-    }
 
-    // check if article already in use
-    const exist = await this.findOne({title});
-    
-    if(exist){
-        throw Error('Article already in use');
-    }
+const places = mongoose.model('places', placesSchema);
 
-    // create article
-    const article = await this.create({title, description});
-    
-    return article;
-}
-
-const article = mongoose.model('articles', ArticleSchema);
-
-module.exports = article;
+module.exports = places;

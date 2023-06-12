@@ -27,116 +27,18 @@
       </nav>
       <div class="documents-container">
         <div class="documents-left">
-          <div class="document-item">
-            <div class="image">
-                <img src="../../images/ouest-algerien.jpg" alt="" />
-            </div>
-            <div class="item-description">
-              <h4>Oran</h4>
-              <h3>La chapelle Notre-Dame de Santa Cruz</h3>
-              <span>1mo ago</span>
-            </div>
-          </div>
-          <div class="document-item">
-            <div class="image">
-                <img src="../../images/ouest-algerien.jpg" alt="" />
-            </div>
-            <div class="item-description">
-              <h4>Oran</h4>
-              <h3>La chapelle Notre-Dame de Santa Cruz</h3>
-              <span>1mo ago</span>
-            </div>
-          </div>
-          <div class="document-item">
-            <div class="image">
-                <img src="../../images/ouest-algerien.jpg" alt="" />
-            </div>
-            <div class="item-description">
-              <h4>Oran</h4>
-              <h3>La chapelle Notre-Dame de Santa Cruz</h3>
-              <span>1mo ago</span>
-            </div>
-          </div>
-          <div class="document-item">
-            <div class="image">
-                <img src="../../images/ouest-algerien.jpg" alt="" />
-            </div>
-            <div class="item-description">
-              <h4>Oran</h4>
-              <h3>La chapelle Notre-Dame de Santa Cruz</h3>
-              <span>1mo ago</span>
-            </div>
-          </div>
-          <div class="document-item">
-            <div class="image">
-                <img src="../../images/ouest-algerien.jpg" alt="" />
-            </div>
-            <div class="item-description">
-              <h4>Oran</h4>
-              <h3>La chapelle Notre-Dame de Santa Cruz</h3>
-              <span>1mo ago</span>
-            </div>
-          </div>
-          <div class="document-item">
-            <div class="image">
-                <img src="../../images/ouest-algerien.jpg" alt="" />
-            </div>
-            <div class="item-description">
-              <h4>Oran</h4>
-              <h3>La chapelle Notre-Dame de Santa Cruz</h3>
-              <span>1mo ago</span>
-            </div>
-          </div>
-          <div class="document-item">
-            <div class="image">
-                <img src="../../images/ouest-algerien.jpg" alt="" />
-            </div>
-            <div class="item-description">
-              <h4>Oran</h4>
-              <h3>La chapelle Notre-Dame de Santa Cruz</h3>
-              <span>1mo ago</span>
-            </div>
-          </div>
-          <div class="document-item">
-            <div class="image">
-                <img src="../../images/ouest-algerien.jpg" alt="" />
-            </div>
-            <div class="item-description">
-              <h4>Oran</h4>
-              <h3>La chapelle Notre-Dame de Santa Cruz</h3>
-              <span>1mo ago</span>
-            </div>
-          </div>
-          <div class="document-item">
-            <div class="image">
-                <img src="../../images/ouest-algerien.jpg" alt="" />
-            </div>
-            <div class="item-description">
-              <h4>Oran</h4>
-              <h3>La chapelle Notre-Dame de Santa Cruz</h3>
-              <span>1mo ago</span>
-            </div>
-          </div>
-          <div class="document-item">
-            <div class="image">
-                <img src="../../images/ouest-algerien.jpg" alt="" />
-            </div>
-            <div class="item-description">
-              <h4>Oran</h4>
-              <h3>La chapelle Notre-Dame de Santa Cruz</h3>
-              <span>1mo ago</span>
-            </div>
-          </div>
-          <div class="document-item">
-            <div class="image">
-                <img src="../../images/ouest-algerien.jpg" alt="" />
-            </div>
-            <div class="item-description">
-              <h4>Oran</h4>
-              <h3>La chapelle Notre-Dame de Santa Cruz</h3>
-              <span>1mo ago</span>
-            </div>
-          </div>
+          <% if (place) { %>
+              <div class="document-item">
+                <div class="image">
+                    <img src="../../images/ouest-algerien.jpg" alt="" />
+                </div>
+                <div class="item-description">
+                  <h4><%=place.Nouveau_No %></h4>
+                  <h3><%=place.Ancien_Nom %></h3>
+                  <span>1mo ago</span>
+                </div>
+              </div>
+          <% } %>
         </div>
 
         <div class="documents-right">

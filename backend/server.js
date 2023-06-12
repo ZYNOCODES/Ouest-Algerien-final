@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const usersroutes = require('./routes/users');
 const indexroutes = require('./routes/index');
+const placeroutes = require('./routes/places');
 var path = require('path');
 const bodyParser = require("body-parser");
 const passport = require('passport');
@@ -63,6 +64,7 @@ next();
 //routes
 app.use('/', indexroutes); 
 app.use('/user', usersroutes); 
+app.use('/places', placeroutes);
 
 
 

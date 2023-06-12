@@ -96,11 +96,12 @@ var StationIcon = L.icon({
     iconSize: [25, 41],
     iconAnchor:   [12, 41],
 });
+   
 // Places
 function GareOran() {
     lat = "35.69873978861225";
     lon = "-0.638246122889966";
-
+    
     //Add a marker to show where you clicked.
     const Place = L.marker([lat,lon],{icon: GarsIcon}).addTo(map);
     const circle = L.circle([lat,lon], {
@@ -110,10 +111,11 @@ function GareOran() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba4910c"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
-            <h1>Gare d\'Oran</h1>
+        <form methode="POST" action="/places/Place/${id}">    
+            <h1>Gare d'Oran</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
             <input type="submit" value="voir"/>
@@ -137,9 +139,10 @@ function EsSénia() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba4910d"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Es Sénia</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -164,9 +167,10 @@ function Valmy() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba4910e"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Valmy</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -191,9 +195,10 @@ function Arbal() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba4910f"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Arbal</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -218,9 +223,10 @@ function OuedTlélat() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba49110"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Oued Tlélat</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -245,9 +251,10 @@ function Zahana() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba49111"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Zahana</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -272,9 +279,10 @@ function LauriersRoses() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba49112"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Lauriers Roses</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -299,9 +307,10 @@ function AinElBerd() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba49113"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Ain El Berd</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -326,9 +335,10 @@ function SidiHamadouche() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba49114"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Sidi Hamadouche</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -353,9 +363,10 @@ function SidiBrahim() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba49115"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Sidi Brahim</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -380,9 +391,10 @@ function GaredeSidiBelAbbès() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba49116"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Gare de Sidi BelAbbès</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -407,9 +419,10 @@ function SidiLahcen() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba49117"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Sidi Lahcen</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -434,9 +447,10 @@ function SidiKhaled() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba49118"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Sidi Khaled</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -461,9 +475,10 @@ function Bouchabka() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba49119"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Bouchabka</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -488,9 +503,10 @@ function Tabia() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba4911a"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Tabia</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -515,9 +531,10 @@ function TffaminTassin() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba4911b"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Tffamin Tassin</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -542,9 +559,10 @@ function BenBadis() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba4911c"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Ben Badis</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -569,9 +587,10 @@ function AinTellout() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba4911d"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Ain Tellout</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -596,9 +615,10 @@ function OuledMimoun() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba4911e"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Ouled Mimoun</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -623,9 +643,10 @@ function OuedLakhdar() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba4911f"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Oued Lakhdar</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -650,9 +671,10 @@ function AinFezza() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba49120"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Ain Fezza</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -677,9 +699,10 @@ function GareDeTlemcen() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba49121"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Gare De Tlemcen</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -704,9 +727,10 @@ function Mansourah() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba49122"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Mansourah</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -731,9 +755,10 @@ function AinDouz() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba49123"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Ain Douz</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -758,9 +783,10 @@ function Zelboune() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba49124"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Zelboune</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -785,9 +811,10 @@ function Sebra() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba49125"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Sebra</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -812,9 +839,10 @@ function SidiMedjahed() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba49126"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Sidi Medjahed</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -839,9 +867,10 @@ function Teghalimet() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba49127"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Teghalimet</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -866,9 +895,10 @@ function Maghnia() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba49128"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Maghnia</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -893,9 +923,10 @@ function AkidAbbes() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba49129"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Akid Abbes</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>
@@ -920,9 +951,10 @@ function NouvelleGareOujda() {
         radius: 50
     }).addTo(map);
     // Add popup message
+    id = "64870747f4705307bba4912a"
     let template = `
     <div style="text-align:center" class="LocationDisplay">
-        <form methode="GET" action="article">    
+        <form methode="POST" action="/places/Place/${id}">    
             <h1>Nouvelle Gare Oujda</h1>
             <h2>Location :</h2>
             <h3>${lat + ', ' + lon}</h3>

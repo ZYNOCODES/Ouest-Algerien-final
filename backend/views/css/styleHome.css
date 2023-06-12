@@ -7,7 +7,6 @@
   --darkcolor: #000;
   --bgbutton: #33a4e7;
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -340,7 +339,7 @@ nav ul li a {
   background-color: red;
 }
 .categorie:nth-child(2) .circle-categorie {
-  background-color: yellow;
+  background-color: violet;
 }
 .categorie:last-child .circle-categorie {
   background-color: green;
@@ -558,4 +557,21 @@ footer {
   font-weight: 700;
   font-size: 12px;
   line-height: 18px;
+}
+
+.LocationDisplay{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #500707;
+}
+.LocationDisplay input{
+  width: 150px;
+  align-self: center;
+  align-content: center;
+  text-align: center;
+  color: #500707;
 }
