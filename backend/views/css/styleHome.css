@@ -7,6 +7,7 @@
   --darkcolor: #000;
   --bgbutton: #33a4e7;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -82,14 +83,14 @@ nav ul li a {
   line-height: 30px;
 }
 
-.home-list{
+.home-list {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.home-list::before{
+.home-list::before {
   position: absolute;
   bottom: -2px;
   content: "";
@@ -176,18 +177,17 @@ nav ul li a {
   transition: 1s all ease;
 }
 
-.liste-du-patrimoine {
+.liste-pat {
   width: 100%;
-  position: relative;
+  height: fit-content;
   display: flex;
   flex-direction: column;
-  padding-left: 106px;
-  height: 2522px;
 }
 
 .titre-liste {
-  position: absolute;
-  top: 62px;
+  padding-left: 106px;
+
+  margin-top: 62px;
   font-weight: 600;
   font-size: 60px;
   line-height: 90px;
@@ -195,12 +195,13 @@ nav ul li a {
 }
 
 .liste-du-patrimoine-container {
-  width: calc(869px + 338px + 20px);
+  /* width: calc(869px + 338px + 20px); */
+  width: 100%;
+  padding-left: 106px;
+  padding-right: 106px;
   min-height: 100vh;
   display: flex;
-  position: absolute;
-  top: 139px;
-  gap: 20px;
+  justify-content: space-between;
 }
 
 .left-liste-du-patrimoine {
@@ -339,7 +340,7 @@ nav ul li a {
   background-color: red;
 }
 .categorie:nth-child(2) .circle-categorie {
-  background-color: violet;
+  background-color: yellow;
 }
 .categorie:last-child .circle-categorie {
   background-color: green;
@@ -442,15 +443,21 @@ footer {
   background-color: rgba(33, 33, 33, 1);
   display: flex;
   flex-direction: column;
+  margin-top: 40px;
   padding-top: 40px;
-  position: relative;
+  /* position: absolute; */
 }
 
-.footer-items{
+.footer-container {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.footer-items {
   display: flex;
   justify-content: space-around;
 }
-
 
 .footer-item {
   display: flex;
@@ -463,15 +470,15 @@ footer {
   width: 254.4px;
 }
 
-.quicklinks{
+.quicklinks {
   width: 146px;
 }
 
-.contact{
+.contact {
   width: 229px;
 }
 
-.terms{
+.terms {
   width: 195px;
   margin-top: 127px;
 }
@@ -497,36 +504,36 @@ footer {
   justify-content: center;
 }
 
-.social-media-item a{
+.social-media-item a {
   color: #fff;
 }
 
-.facebook{
+.facebook {
   background-color: rgba(39, 46, 174, 1);
 }
 
-.twitter{
- background-color: rgba(21, 144, 216, 1);
+.twitter {
+  background-color: rgba(21, 144, 216, 1);
 }
 
-.youtube{
- background-color: rgba(208, 2, 27, 1);
+.youtube {
+  background-color: rgba(208, 2, 27, 1);
 }
 
-.dribbble{
+.dribbble {
   background-color: rgba(245, 62, 106, 1);
 }
 
-.social-media-item i{
+.social-media-item i {
   font-size: 12px;
 }
 
-.quicklinks h3{
+.quicklinks h3 {
   font-size: 16px;
   text-transform: capitalize;
 }
 
-.quicklinks ul{
+.quicklinks ul {
   list-style: none;
 }
 
@@ -540,38 +547,72 @@ footer {
   transition: 0.5s all ease-in-out;
 }
 
-
-.footer-mobot{
+.footer-mobot {
   width: 100%;
   height: 39px;
-  position: absolute;
-  bottom: 0;
   background-color: #000;
   display: flex;
   align-items: center;
   padding-left: 90px;
 }
 
-.footer-mobot h3{
+.footer-mobot h3 {
   color: #fff;
   font-weight: 700;
   font-size: 12px;
   line-height: 18px;
 }
 
-.LocationDisplay{
+.bare-navigation {
+  width: 100%;
+  height: 153px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  /* background-color: red; */
+}
+
+.bare-navigation-item {
+  width: calc(100% / 3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100%;
-  text-align: center;
-  color: #500707;
+  cursor: pointer;
 }
-.LocationDisplay input{
-  width: 150px;
-  align-self: center;
-  align-content: center;
-  text-align: center;
-  color: #500707;
+
+.bare-navigation-item:nth-child(1) {
+  background-color: #fff;
 }
+
+.bare-navigation-item:nth-child(2) {
+  background-color: rgba(36, 149, 216, 1);
+}
+.bare-navigation-item:nth-child(3) {
+  background-color: rgba(12, 92, 5, 1);
+}
+
+.bare-navigation-item h2 {
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 90px;
+  color: #393d48;
+}
+
+#Gares,
+#Geo {
+  display: none;
+}
+
+.gares-class-active #Gares,
+.geo-class-active #Geo  {
+  display: flex;
+}
+
+
+.gares-class-active #gares-btn h2 {
+  transition: 1s all ease;
+  color: #fff;
+}
+
+
