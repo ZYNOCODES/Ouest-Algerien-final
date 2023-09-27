@@ -11,19 +11,17 @@ const PlaceById = async (req, res) => {
         res.json({ message: err });
     }
 };
-const GetPlaceById = async (req, res) => {
-    const {id} = req.params;
+const GetAllPlaces = async (req, res) => {
     try {
-        await Place.findOne({_id: id}).then((result) => {
-            res.status(200).json({places: result});
-        }).catch(err => {
-            res.json('error', err);
-        });
-    }catch (err) {
-        res.json({ message: err });
+        const places = await Place.find({});
+        const types = [...new Set(places.map(place => place.Type))];
+        res.status(200).json(types);
+    } catch (err) {
+        res.status(500).json({ message: err });
     }
 };
+
 module.exports = {
-    GetPlaceById,
+    GetAllPlaces,
     PlaceById
 };

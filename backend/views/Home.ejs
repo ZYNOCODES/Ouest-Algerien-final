@@ -27,25 +27,13 @@
         <a class="logo" href="#">LOGO</a>
         <ul>
           <li class="home-list"><a href="/">home</a></li>
-          <li><a href="/Documents" id="liste">documents</a></li>
-          <li><a href="#" id="liste">about us</a></li>
+          <li><a href="/About" id="liste">about us</a></li>
           <li><a href="/Contact" id="liste">contact us</a></li>
         </ul>
       </nav>
       <div class="header-container">
-        <h2>ouest algérien</h2>
-        <p>
-          Ce text présente la problématique, la méthode de recherche et les
-          <br />
-          principaux résultats d'une thèse de doctorat en géographie intitulée
-          <br />
-          "Environnement er littoralisation de l'Ouest algérien".Menée en
-          cotutelle <br />
-          entre l'Université d'Oran
-        </p>
-        <div class="descover-button">
-          <a href="/user/Admin">descover</a>
-        </div>
+        <h3>ARCHITECTURE</h3>
+        <h3>FERROVFERROVIAIRE</h3>
       </div>
       <div class="social-media">
         <a href="#"><i class="fa-brands fa-facebook"></i></a>
@@ -55,40 +43,37 @@
     </header>
     <section class="liste-du-patrimoine">
       <div class="bare-navigation">
-        <div id="geo-btn" class="bare-navigation-item">
-          <h2>Geo</h2>
-        </div>
         <div id="gares-btn" class="bare-navigation-item">
           <h2>Gares</h2>
         </div>
-        <div id="ouvrage-btn" class="bare-navigation-item">
-          <h2>Ouvrages d’art</h2>
+        <div id="geo-btn" class="bare-navigation-item">
+          <h2>Station</h2>
+        </div>
+        <div id="ponts-btn" class="bare-navigation-item">
+          <h2>Ponts</h2>
+        </div>
+        <div id="haltes-btn" class="bare-navigation-item">
+          <h2>Haltes</h2>
         </div>
       </div>
+      
       <div id="Gares" class="liste-pat">
-        <h1 class="titre-liste">Liste du patrimoine</h1>
+        <h1 class="titre-liste">LISTE DES GARES</h1>
         <div class="liste-du-patrimoine-container">
           <div class="left-liste-du-patrimoine">
-            <div class="left-header">
-              <div class="wilaya">
-                <h2>1</h2>
-                <span>wilaya</span>
-              </div>
-              <div class="wilaya">
-                <h2>152</h2>
-                <span>places</span>
-              </div>
-              <div class="wilaya"></div>
-            </div>
-            <div id="map" class="left-center-map"></div>
+            <div id="GareMap" class="left-center-map"></div>
             <div class="left-footer">
-              <h2>algeria</h2>
-              <h4>• Oran :</h4>
+              <h2>Gares</h2>
               <div class="left-footer-container">
-                <a href="https://whc.unesco.org/fr/list/914"
-                  ><div class="line"></div>
-                  Parc de la zone humide d’iSimangaliso</a
-                >
+                <% if (Gare && Gare.length > 0) { %>
+                  <% Gare.forEach(function(place) { %>
+                    <h1>
+                      <div class="line"></div><%= place.Nom %>
+                    </h1>
+                  <% }); %>
+                <% } else { %>
+                  <p>No places found.</p>
+                <% } %>
               </div>
             </div>
           </div>
@@ -119,7 +104,7 @@
                 par 50cm, est disponible en version
               </p>
               <div class="learn button">
-                <a href="#">Learn more</a>
+                <a href="/About">Learn more</a>
               </div>
             </div>
             <div class="right-bottom">
@@ -129,7 +114,7 @@
                 en version
               </p>
               <div class="contact button">
-                <a href="#">Let's talk</a>
+                <a href="/Contact">Let's talk</a>
               </div>
             </div>
           </div>
@@ -194,31 +179,24 @@
         </footer>
       </div>
       <div id="Geo" class="liste-pat">
-        <h1 class="titre-liste">Liste du patrimoine</h1>
+        <h1 class="titre-liste">LISTE DES STATIONS</h1>
         <div class="liste-du-patrimoine-container">
           <div class="left-liste-du-patrimoine">
-            <div class="left-header">
-              <div class="wilaya">
-                <h2>1</h2>
-                <span>wilaya</span>
-              </div>
-              <div class="wilaya">
-                <h2>152</h2>
-                <span>places</span>
-              </div>
-              <div class="wilaya"></div>
-            </div>
-            <div id="map" class="left-center-map"></div>
-            <!-- <div class="left-footer">
-              <h2>algeria</h2>
-              <h4>• Oran :</h4>
+            <div id="StationMap" class="left-center-map"></div>
+            <div class="left-footer">
+              <h2>Stations</h2>
               <div class="left-footer-container">
-                <a href="https://whc.unesco.org/fr/list/914"
-                  ><div class="line"></div>
-                  Parc de la zone humide d’iSimangaliso</a
-                >
+                <% if (Station && Station.length > 0) { %>
+                  <% Station.forEach(function(place) { %>
+                    <h1>
+                      <div class="line"></div><%= place.Nom %>
+                    </h1>
+                  <% }); %>
+                <% } else { %>
+                  <p>No places found.</p>
+                <% } %>
               </div>
-            </div> -->
+            </div> 
           </div>
           <div class="right-liste-du-patrimoine">
             <div class="right-header">
@@ -247,7 +225,7 @@
                 par 50cm, est disponible en version
               </p>
               <div class="learn button">
-                <a href="#">Learn more</a>
+                <a href="/About">Learn more</a>
               </div>
             </div>
             <div class="right-bottom">
@@ -257,7 +235,284 @@
                 en version
               </p>
               <div class="contact button">
-                <a href="#">Let's talk</a>
+                <a href="/Contact">Let's talk</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer>
+          <div class="footer-container">
+            <div class="footer-items">
+              <div class="footer-item LOGO">
+                <h2>LOGO</h2>
+                <p>
+                  Mobot is an online education platform that delivers video
+                  courses, programs and resources.
+                </p>
+                <div class="footer-social-media">
+                  <div class="social-media-item facebook">
+                    <a href="#">
+                      <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                  </div>
+                  <div class="social-media-item twitter">
+                    <a href="#">
+                      <i class="fa-brands fa-twitter"></i>
+                    </a>
+                  </div>
+                  <div class="social-media-item youtube">
+                    <a href="#">
+                      <i class="fa-brands fa-youtube"></i>
+                    </a>
+                  </div>
+                  <div class="social-media-item dribbble">
+                    <a href="#">
+                      <i class="fa-brands fa-dribbble"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="footer-item quicklinks">
+                <h3>quicklinks</h3>
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Documents</a></li>
+                  <li><a href="#">Gallery</a></li>
+                  <li><a href="#">About us</a></li>
+                  <li><a href="#">Contact us</a></li>
+                </ul>
+              </div>
+              <div class="footer-item contact">
+                <h3>Contact Us</h3>
+                <p>
+                  (+55) 254. 254. 254 <br />Info@lsemajafrica.com Helios Tower
+                  75 Tam Trinh Algeria,Algeries
+                </p>
+              </div>
+              <div class="footer-item terms">
+                <p>Terms and Conditions Faq</p>
+              </div>
+            </div>
+            <div class="footer-mobot">
+              <h3>All Right Reserved | MOBOT</h3>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <div id="Ponts" class="liste-pat">
+        <h1 class="titre-liste">LISTE DES PONTS</h1>
+        <div class="liste-du-patrimoine-container">
+          <div class="left-liste-du-patrimoine">
+            <div id="PontMap" class="left-center-map"></div>
+            <div class="left-footer">
+              <div class="left-footer-container">
+                <% if ((Pont && Pont.length > 0)
+                || (PontMetallique && PontMetallique.length > 0) 
+                || (Viaducenmaconnerie && Viaducenmaconnerie.length > 0)
+                || (Viaducmetallique && Viaducmetallique.length > 0)
+                || (maconnerie && maconnerie.length > 0) 
+                || (PontMetalliqueenArc && PontMetalliqueenArc.length > 0)) { %>
+                  <h2>Pont:</h2>
+                  <% Pont.forEach(function(Pont) { %>
+                    <h1>
+                      <div class="line"></div><%= Pont.Nom %>
+                    </h1>
+                  <% }); %>
+                  <h2>Pont metallique:</h2>
+                  <% PontMetallique.forEach(function(PontMetallique) { %>
+                    <h1>
+                      <div class="line"></div><%= PontMetallique.Nom %>
+                    </h1>
+                  <% }); %>
+                  <h2>Viaducen maconnerie:</h2>
+                  <% Viaducenmaconnerie.forEach(function(Viaducenmaconnerie) { %>
+                    <h1>
+                      <div class="line"></div><%= Viaducenmaconnerie.Nom %>
+                    </h1>
+                  <% }); %>
+                  <h2>Viaduc metallique:</h2>
+                  <% Viaducmetallique.forEach(function(Viaducmetallique) { %>
+                    <h1>
+                      <div class="line"></div><%= Viaducmetallique.Nom %>
+                    </h1>
+                  <% }); %>
+                  <h2>maconnerie:</h2>
+                  <% maconnerie.forEach(function(maconnerie) { %>
+                    <h1>
+                      <div class="line"></div><%= maconnerie.Nom %>
+                    </h1>
+                  <% }); %>
+                  <h2>Pont metallique en Arc:</h2>
+                  <% PontMetalliqueenArc.forEach(function(PontMetalliqueenArc) { %>
+                    <h1>
+                      <div class="line"></div><%= PontMetalliqueenArc.Nom %>
+                    </h1>
+                  <% }); %>
+                <% } else { %>
+                  <p>No Ponts found.</p>
+                <% } %>
+              </div>
+            </div> 
+          </div>
+          <div class="right-liste-du-patrimoine">
+            <div class="right-header">
+              <h2>Catégorie du bien</h2>
+              <div class="categories">
+                <div class="categorie first">
+                  <div class="circle-categorie"></div>
+                  <h3>catégorie 1</h3>
+                </div>
+                <div class="categorie second">
+                  <div class="circle-categorie"></div>
+                  <h3>catégorie 2</h3>
+                </div>
+                <div class="categorie third">
+                  <div class="circle-categorie"></div>
+                  <h3>catégorie 3</h3>
+                </div>
+              </div>
+            </div>
+            <div class="right-centre">
+              <h2>About us</h2>
+              <p>
+                La carte grand format en couleurs, 78cm par 50cm, est disponible
+                en version La carte grand format en couleurs, 78cm par 50cm, est
+                disponible en version La carte grand format en couleurs, 78cm
+                par 50cm, est disponible en version
+              </p>
+              <div class="learn button">
+                <a href="/About">Learn more</a>
+              </div>
+            </div>
+            <div class="right-bottom">
+              <h2>Contact us</h2>
+              <p>
+                La carte grand format en couleurs, 78cm par 50cm, est disponible
+                en version
+              </p>
+              <div class="contact button">
+                <a href="/Contact">Let's talk</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer>
+          <div class="footer-container">
+            <div class="footer-items">
+              <div class="footer-item LOGO">
+                <h2>LOGO</h2>
+                <p>
+                  Mobot is an online education platform that delivers video
+                  courses, programs and resources.
+                </p>
+                <div class="footer-social-media">
+                  <div class="social-media-item facebook">
+                    <a href="#">
+                      <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                  </div>
+                  <div class="social-media-item twitter">
+                    <a href="#">
+                      <i class="fa-brands fa-twitter"></i>
+                    </a>
+                  </div>
+                  <div class="social-media-item youtube">
+                    <a href="#">
+                      <i class="fa-brands fa-youtube"></i>
+                    </a>
+                  </div>
+                  <div class="social-media-item dribbble">
+                    <a href="#">
+                      <i class="fa-brands fa-dribbble"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="footer-item quicklinks">
+                <h3>quicklinks</h3>
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Documents</a></li>
+                  <li><a href="#">Gallery</a></li>
+                  <li><a href="#">About us</a></li>
+                  <li><a href="#">Contact us</a></li>
+                </ul>
+              </div>
+              <div class="footer-item contact">
+                <h3>Contact Us</h3>
+                <p>
+                  (+55) 254. 254. 254 <br />Info@lsemajafrica.com Helios Tower
+                  75 Tam Trinh Algeria,Algeries
+                </p>
+              </div>
+              <div class="footer-item terms">
+                <p>Terms and Conditions Faq</p>
+              </div>
+            </div>
+            <div class="footer-mobot">
+              <h3>All Right Reserved | MOBOT</h3>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <div id="Haltes" class="liste-pat">
+        <h1 class="titre-liste">LISTE DES HALTES</h1>
+        <div class="liste-du-patrimoine-container">
+          <div class="left-liste-du-patrimoine">
+            <div id="HalteMap" class="left-center-map"></div>
+            <div class="left-footer">
+              <h2>Haltes</h2>
+              <div class="left-footer-container">
+                <% if (Halte && Halte.length > 0) { %>
+                  <% Halte.forEach(function(place) { %>
+                    <h1>
+                      <div class="line"></div><%= place.Nom %>
+                    </h1>
+                  <% }); %>
+                <% } else { %>
+                  <p>No places found.</p>
+                <% } %>
+              </div>
+            </div> 
+          </div>
+          <div class="right-liste-du-patrimoine">
+            <div class="right-header">
+              <h2>Catégorie du bien</h2>
+              <div class="categories">
+                <div class="categorie first">
+                  <div class="circle-categorie"></div>
+                  <h3>catégorie 1</h3>
+                </div>
+                <div class="categorie second">
+                  <div class="circle-categorie"></div>
+                  <h3>catégorie 2</h3>
+                </div>
+                <div class="categorie third">
+                  <div class="circle-categorie"></div>
+                  <h3>catégorie 3</h3>
+                </div>
+              </div>
+            </div>
+            <div class="right-centre">
+              <h2>About us</h2>
+              <p>
+                La carte grand format en couleurs, 78cm par 50cm, est disponible
+                en version La carte grand format en couleurs, 78cm par 50cm, est
+                disponible en version La carte grand format en couleurs, 78cm
+                par 50cm, est disponible en version
+              </p>
+              <div class="learn button">
+                <a href="/About">Learn more</a>
+              </div>
+            </div>
+            <div class="right-bottom">
+              <h2>Contact us</h2>
+              <p>
+                La carte grand format en couleurs, 78cm par 50cm, est disponible
+                en version
+              </p>
+              <div class="contact button">
+                <a href="/Contact">Let's talk</a>
               </div>
             </div>
           </div>
@@ -326,5 +581,9 @@
     <script src="https://unpkg.com/wicg-inert@latest/dist/inert.min.js"></script>
     <script src="/Adminmain.js"></script>
     <script src="/mainHome.js"></script>
+    <script src="/GareMain.js"></script>
+    <script src="/StationMain.js"></script>
+    <script src="/PontMain.js"></script>
+    <script src="/HalteMain.js"></script>
   </body>
 </html>

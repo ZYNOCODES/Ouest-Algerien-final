@@ -1,6 +1,6 @@
 const express = require('express');
 const {
-    GetPlaceById,
+    GetAllPlaces,
     PlaceById
 } = require('../controllers/PlacesController');
 const router = express.Router();
@@ -8,6 +8,6 @@ const router = express.Router();
 //voir place by id
 router.post('/:id', PlaceById);
 //get place by id
-router.get('/place/:id', GetPlaceById);
+router.get('/All/all', GetAllPlaces);
 
 module.exports = router;

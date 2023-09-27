@@ -10,38 +10,6 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: apiKey
 }).addTo(map);
 
-
-
-// // Adding Marker
-// var marker = {};
-// function onMapClick(e) {
-//     lat = e.latlng.lat;
-//     lon = e.latlng.lng;
-//     console.log("You clicked the map at LAT: "+ lat+" and LONG: "+lon );
-//         //Clear existing marker, 
-
-//         if (marker != undefined) {
-//             map.removeLayer(marker);
-//         };
-
-//     //Add a marker to show where you clicked.
-//     marker = L.marker([lat,lon]).addTo(map);
-//     // Add popup message
-//     let template = `
-//     <h3>${lat + ', ' + lon}</h3>
-//     <div style="text-align:center">
-//         <img width="150" height="150"src="images/image.jpg"/>
-//         <button type="submit" title="Add" style="color: red"></button>
-//     </div>
-//     `
-//     marker.bindPopup(template);
-    
-// }
-// map.on('click', onMapClick);
-
-// Add Polygon
-
-
 // Create polyline
 var lineCoordinates = [
     [35.69873978861225,-0.638246122889966],
@@ -76,7 +44,6 @@ var lineCoordinates = [
     [34.68234233656023,-1.92172169537964],
 ];
 var polyline = L.polyline(lineCoordinates, { color: 'gold', weight: 10 }).addTo(map);
-
 //colors
 const PrimaryColor = 'red'
 const FillColor = '#f03'
@@ -101,38 +68,7 @@ var PontIcon = L.icon({
     iconSize: [25, 41],
     iconAnchor:   [12, 41],
 });
-   
-// Places
-function addMarkersToMap(data, Icon) {
-    data.forEach((JSONData) => {
-        const lat = JSONData.LattitudeY;
-        const lon = JSONData.LongitudeX;
-
-        // Add a marker to show the location.
-        const Place = L.marker([lat, lon], { icon: Icon }).addTo(map);
-        const circle = L.circle([lat, lon], {
-            color: PrimaryColor,
-            fillColor: FillColor,
-            fillOpacity: 0.2,
-            radius: 50
-        }).addTo(map);
-
-        // Add popup message
-        const id = JSONData._id.$oid;
-        const template = `
-            <div style="text-align:center" class="LocationDisplay">
-                <form method="POST" action="/places/${id}">
-                    <h1>${JSONData.Nom}</h1>
-                    <h2>Location:</h2>
-                    <h3>${lat + ', ' + lon}</h3>
-                    <input type="submit" value="voir"/>
-                </form>
-            </div>
-        `;
-        Place.bindPopup(template);
-    });
-}
-
+// Places Data
 const PontsData = [
     {
         "_id": {
@@ -1585,13 +1521,41 @@ const haltesData = [
         "Nom": "Sidi-Medjahed"
       }
 ]
+// function to add markers to the map
+function addMarkersToMap(data, Icon) {
+    data.forEach((JSONData) => {
+        const lat = JSONData.LattitudeY;
+        const lon = JSONData.LongitudeX;
 
+        // Add a marker to show the location.
+        const Place = L.marker([lat, lon], { icon: Icon }).addTo(map);
+        const circle = L.circle([lat, lon], {
+            color: PrimaryColor,
+            fillColor: FillColor,
+            fillOpacity: 0.2,
+            radius: 50
+        }).addTo(map);
+
+        // Add popup message
+        const id = JSONData._id.$oid;
+        const template = `
+            <div style="text-align:center" class="LocationDisplay">
+                <form method="POST" action="/places/${id}">
+                    <h1>${JSONData.Nom}</h1>
+                    <h2>Location:</h2>
+                    <h3>${lat + ', ' + lon}</h3>
+                    <input type="submit" value="voir"/>
+                </form>
+            </div>
+        `;
+        Place.bindPopup(template);
+    });
+}
 function Markers(){
     addMarkersToMap(PontsData, PontIcon)
     addMarkersToMap(GarsData, GarsIcon)
     addMarkersToMap(StationsData, StationIcon)
     addMarkersToMap(haltesData, HalteIcon)
-
 }
 map.add(Markers());
 
