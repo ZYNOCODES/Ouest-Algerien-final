@@ -6,7 +6,8 @@ const {
 const router = express.Router();
 
 //voir place by id
-router.post('/Place/:id', PlaceById);
+router.post('/:id', PlaceById);
 //get place by id
-router.get('/Place/:id', GetPlaceById);
+router.get('/place/:id', GetPlaceById);
+
 module.exports = router;

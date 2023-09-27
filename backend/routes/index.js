@@ -19,13 +19,17 @@ router.get("/Documents", (req, res) => {
 router.get("/Contact", (req, res) => {
     return res.render('Contact');
 });
-router.get("/places/Place/:id", async (req, res) => {
+router.get("/:id", async (req, res) => {
     const {id} = req.params;
-    await Place.findById({_id: id}).then((result) => {
-        return res.render('Documents',{place: result});
-    }).catch((err) => {
-        console.log(err)});
-    
+    try {
+        await Place.findOne({_id: id}).then((result) => {
+            return res.render('Documents',{place: result});
+        }).catch(err => {
+            res.json('error', err);
+        });
+    }catch (err) {
+        res.json({ message: err });
+    }
 });
 
 module.exports = router;

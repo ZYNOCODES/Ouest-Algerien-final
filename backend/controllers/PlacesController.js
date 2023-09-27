@@ -6,7 +6,7 @@ const Place = require('../models/ArticleModel');
 const PlaceById = async (req, res) => {
     const {id} = req.params;
     try {
-        res.redirect(`/Place/${id}`);
+        res.redirect(`/${id}`);
     } catch (err) {
         res.json({ message: err });
     }
@@ -14,9 +14,12 @@ const PlaceById = async (req, res) => {
 const GetPlaceById = async (req, res) => {
     const {id} = req.params;
     try {
-        const place = await Place.findById({_id: id});
-        res.status(200).json({place: place});
-    } catch (err) {
+        await Place.findOne({_id: id}).then((result) => {
+            res.status(200).json({places: result});
+        }).catch(err => {
+            res.json('error', err);
+        });
+    }catch (err) {
         res.json({ message: err });
     }
 };
