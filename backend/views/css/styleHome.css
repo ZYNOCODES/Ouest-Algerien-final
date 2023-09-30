@@ -100,7 +100,7 @@ nav ul li a {
   text-align: center;
   background-color: #fff;
 }
-map
+
 .header-container {
   width: 100%;
   position: absolute;
@@ -624,7 +624,6 @@ footer {
   color: #393D48;
   background-color: #fff;
 }
-
 
 .LocationDisplay{
   display: flex;
