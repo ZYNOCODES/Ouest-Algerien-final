@@ -1557,7 +1557,7 @@ function Markers(){
     addMarkersToMap(StationsData, StationIcon)
     addMarkersToMap(haltesData, HalteIcon)
 }
-map.add(Markers());
+Markers();
 
 
 let addButton = document.getElementById('add-btn');

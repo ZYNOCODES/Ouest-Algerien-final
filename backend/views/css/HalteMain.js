@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function Markers(){
         addMarkersToMap(haltesData, HalteIcon)
     }
-    HalteMap.add(Markers());
+    Markers();
 });
 
 

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
@@ -11,12 +12,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="/styleHome.css" />
     <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
     />
     <title>Ouest-Algerien</title>
+    <link rel="stylesheet" href="/styleHome.css" />
   </head>
   <body>
     <header>
@@ -61,7 +62,7 @@
         <h1 class="titre-liste">LISTE DES GARES</h1>
         <div class="liste-du-patrimoine-container">
           <div class="left-liste-du-patrimoine">
-            <div id="GareMap" class="left-center-map"></div>
+            <div id="GareMap" class="leaflet-map"></div>
             <div class="left-footer">
               <h2>Gares</h2>
               <div class="left-footer-container">
@@ -182,7 +183,7 @@
         <h1 class="titre-liste">LISTE DES STATIONS</h1>
         <div class="liste-du-patrimoine-container">
           <div class="left-liste-du-patrimoine">
-            <div id="StationMap" class="left-center-map"></div>
+            <div id="StationMap" class="leaflet-map"></div>
             <div class="left-footer">
               <h2>Stations</h2>
               <div class="left-footer-container">
@@ -303,7 +304,7 @@
         <h1 class="titre-liste">LISTE DES PONTS</h1>
         <div class="liste-du-patrimoine-container">
           <div class="left-liste-du-patrimoine">
-            <div id="PontMap" class="left-center-map"></div>
+            <div id="PontMap" class="leaflet-map"></div>
             <div class="left-footer">
               <div class="left-footer-container">
                 <% if ((Pont && Pont.length > 0)
@@ -459,7 +460,7 @@
         <h1 class="titre-liste">LISTE DES HALTES</h1>
         <div class="liste-du-patrimoine-container">
           <div class="left-liste-du-patrimoine">
-            <div id="HalteMap" class="left-center-map"></div>
+            <div id="HalteMap" class="leaflet-map"></div>
             <div class="left-footer">
               <h2>Haltes</h2>
               <div class="left-footer-container">
@@ -579,7 +580,6 @@
     </section>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://unpkg.com/wicg-inert@latest/dist/inert.min.js"></script>
-    <script src="/Adminmain.js"></script>
     <script src="/mainHome.js"></script>
     <script src="/GareMain.js"></script>
     <script src="/StationMain.js"></script>

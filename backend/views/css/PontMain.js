@@ -882,7 +882,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function Markers(){
         addMarkersToMap(PontsData, PontIcon)
     }
-    PontMap.add(Markers());
+    Markers();
 });
 
 

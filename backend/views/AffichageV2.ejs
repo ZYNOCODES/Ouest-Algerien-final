@@ -4,7 +4,21 @@
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="-1">
-    <meta charset="utf-8">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    />
+    <title>Ouest-Algerien</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/styleAffichageV2.css">
 </head>
@@ -12,10 +26,10 @@
     <div class="container">
         <div class="top-bar">
             <i class="fa-solid fa-chevron-left"></i>
-            <span>Station Intermediaire</span>
+            <span><%=place.Type %></span>
         </div>
         <div class="line1">
-            <h4>Es Sénia</h4>
+            <h4><%=place.Nom %></h4>
             <div class="Bar"></div>
         </div>
         <div class="line2">
@@ -30,12 +44,12 @@
                     <img src="https://lesplusbeauxdrapeauxdumonde.files.wordpress.com/2016/11/algeria-1219746_1280.jpg?w=692&amp;h=390">
                     <span>Algerie</span>
                 </div>
-                <span>Ancien_Nom: <p>Sénia</p></span>
-                <span>CodeWilay : <p>31</p></span>
-                <span>CodeCommu : <p>3101</p></span>
-                <span>PositionKm: <p>415k.094m,97</p></span>
-                <span>StyleArchi: <p>Néo-Mauresque</p></span>
-                <span>LigneFerro: <p>Albert Ballut (Architecte)</p></span>
+                <span>Ancien_Nom: <p><%=place.Ancien_Nom %></p></span>
+                <span>CodeWilay : <p><%=place.CodeWilay %></p></span>
+                <span>CodeCommu : <p><%=place.CodeCommu %></p></span>
+                <span>PositionKm: <p><%=place.PositionKm %></p></span>
+                <span>LigneFerro: <p><%=place.LigneFerro %></p></span>
+                <span>StyleArchi: <p><%=place.StyleArchi %></p></span>
             </div>
         </div>
         <div class="line3">
@@ -59,14 +73,14 @@
                 </div>
             </div>
             <div class="line3-line2">
-                <div class="map-container"></div>
-                <div>
+                <div id="StationMap" class="leaflet-map"></div>
+                <div class="line3-line2-div">
                     <h6>Documents :</h6>
                     <span>01- document 1</span>
                     <span>02- document 2</span>
                     <span>03- document 3</span>
                 </div>
-                <div>
+                <div class="line3-line2-div">
                     <h6>Lien :</h6>
                     <span>01- lien 1</span>
                     <span>02- lien 2</span>
@@ -132,4 +146,12 @@
         <h3>All Right Reserved | MOBOT</h3>
         </div>
     </footer>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/wicg-inert@latest/dist/inert.min.js"></script>
+    <script src="/Adminmain.js"></script>
+    <script src="/mainHome.js"></script>
+    <script src="/GareMain.js"></script>
+    <script src="/StationMain.js"></script>
+    <script src="/PontMain.js"></script>
+    <script src="/HalteMain.js"></script>
 </body>

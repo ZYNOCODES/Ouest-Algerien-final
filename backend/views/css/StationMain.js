@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const apiKey = 'pk.eyJ1Ijoienlub2NvZGVzIiwiYSI6ImNsZnl1Y2w3bzA4YjkzbW10aXFvYTJoYm8ifQ.wqP0wnxpZIjsUSlMXfGqJQ';
 
-    const StationMap = L.map('StationMap').setView([35.25085802266448, -1.1686706542968752], 9.5);
+    const StationMap = L.map('StationMap',{attributionControl: false}).setView([35.25085802266448, -1.1686706542968752], 9.5);
     
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
         maxZoom: 18,
@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
         zoomOffset: -1,
         accessToken: apiKey
     }).addTo(StationMap);
-    
     // Create polyline
     var lineCoordinates = [
         [35.69873978861225,-0.638246122889966],
@@ -522,10 +521,10 @@ document.addEventListener("DOMContentLoaded", function () {
             Place.bindPopup(template);
         });
     }
-    function Markers(){
-        addMarkersToMap(StationsData, StationIcon)
+    function Markers() {
+      addMarkersToMap(StationsData, StationIcon);
     }
-    StationMap.add(Markers());
+    Markers();
 });
 
 

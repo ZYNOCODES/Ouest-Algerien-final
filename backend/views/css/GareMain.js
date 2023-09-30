@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function Markers(){
         addMarkersToMap(GarsData, GarsIcon)
     }
-    GareMap.add(Markers());
+    Markers();
 });
 
 

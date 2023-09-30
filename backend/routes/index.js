@@ -50,7 +50,7 @@ router.get("/:id", async (req, res) => {
     try {
         const result = await Place.findOne({ _id: id });
         if (result) {
-            return res.render('Documents', { place: result });
+            return res.render('AffichageV2', { place: result });
         } else {
             return res.status(404).json({ error: 'Place not found' });
         }
